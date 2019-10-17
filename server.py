@@ -25,11 +25,8 @@ def index():
 @app.route('/upload-image', methods=["GET", "POST"])
 def upload():
     if request.method == "POST":
-
         if request.files:
-
             image = request.files["image"]
-
             if image.filename == "":
                 print("No filename")
                 return redirect(request.url)
