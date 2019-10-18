@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+<style>
+  html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+
+canvas{
+  margin-bottom:-4px;
+  position:fixed;
+  z-index:0;
+  transition:background .5s;
+  background:#fff;
+}
+
+section{
+  width:100%;
+  min-height:100vh;
+  position:relative;
+  z-index:10;
+}
+
+#img{
+    position: absolute;
+    width: 200px;
+    bottom: 70px;
+    left: 40%;
+    position:absolute;
+    opacity:1;
+    transition:opacity 0.5s linear;
+}
+
+.scan-bar {
+  position: absolute;
+  width: 200px;
+  bottom: 70px;
+  left: 40%;
+  z-index: 1000;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(0);
+  height: 3px;
+  background: #4073ff;
+  border-radius: 10px;
+  box-shadow: 0px 0px #4073ff, 0px 2px rgba(64, 115, 255, 0.24), 0px 4px rgba(64, 115, 255, 0.23), 0px 6px rgba(64, 115, 255, 0.22), 0px 8px rgba(64, 115, 255, 0.21), 0px 10px rgba(64, 115, 255, 0.2), 0px 12px rgba(64, 115, 255, 0.19), 0px 14px rgba(64, 115, 255, 0.18), 0px 16px rgba(64, 115, 255, 0.17), 0px 18px rgba(64, 115, 255, 0.16), 0px 20px rgba(64, 115, 255, 0.15), 0px 22px rgba(64, 115, 255, 0.14), 0px 24px rgba(64, 115, 255, 0.13), 0px 26px rgba(64, 115, 255, 0.12), 0px 28px rgba(64, 115, 255, 0.11), 0px 30px rgba(64, 115, 255, 0.1), 0px 32px rgba(64, 115, 255, 0.09), 0px 34px rgba(64, 115, 255, 0.08), 0px 36px rgba(64, 115, 255, 0.07), 0px 38px rgba(64, 115, 255, 0.06), 0px 40px rgba(64, 115, 255, 0.05), 0px 42px rgba(64, 115, 255, 0.04), 0px 44px rgba(64, 115, 255, 0.03), 0px 46px rgba(64, 115, 255, 0.02), 0px 48px rgba(64, 115, 255, 0.01), 0px 50px rgba(64, 115, 255, 0), 0px 52px rgba(64, 115, 255, 0), 0px 54px rgba(64, 115, 255, 0), 0px 56px rgba(64, 115, 255, 0), 0px 58px rgba(64, 115, 255, 0), 0px 60px rgba(64, 115, 255, 0);
+  -webkit-animation: 1s scan infinite alternate;
+          animation: 1s scan infinite alternate;
+}
+
+@-webkit-keyframes scan {
+  0% {
+    bottom: 70px;
+  }
+  100% {
+    bottom: 270px;
+  }
+}
+
+@keyframes scan {
+  0% {
+    bottom: 70px;
+  }
+  100% {
+    bottom: 270px;
+  }
+}
+@-webkit-keyframes fill {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes fill {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+p{ z-index:1000; color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 46px; font-weight: 800; }
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <title>Who R U?</title>
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'><link rel="stylesheet" href="static/css/start.css">
+<link rel="stylesheet" href="static/css/styles.css" />
+
+</head>
+<body>
+<canvas style="margin:0px; width:100%; z-index:0" id="canvas"></canvas>
+<div id="container" style="margin:0px; width:100%; z-index:1">
+    <div id="dropbox" style="margin:0px; width:100%; z-index:2">
+        <span class="message">Drop images here to upload.</span>
+    </div>
+  <div class="scan-bar" id="bar" style="z-index:1000">
+  </div><img src="" id="img" style="z-index: 990;">
+</div>
+</div>
+<div style="z-index:1000; display:grid">
+    <p id="found"></p>
+    <p id="counter"></p>
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.filedrop.js"></script>
+    <script type="text/javascript" src="static/js/matrix.js"></script>
+    <script type="text/javascript" src="static/js/upload.js"></script>
+    <script  src="static/js/start.js"></script>
+</body>
+</html>
